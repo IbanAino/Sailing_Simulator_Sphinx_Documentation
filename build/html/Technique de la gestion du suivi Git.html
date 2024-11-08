@@ -65,7 +65,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#creation-du-jeton-pour-avoir-acces-au-depot-github">Création du jeton pour avoir accès au dépôt GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initialisation-du-depot-git-local">Initialisation du Dépôt Git Local</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#connection-du-depot-local-au-depot-github">Connection du Dépôt Local au Dépôt GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#utilisation-de-sourcetree-pour-gerer-le-depot">Utilisation de  SourceTree pour Gérer le dépôt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-de-sourcetree-pour-gerer-le-depot">Utilisation de  SourceTree pour Gérer le dépôt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ouvrir-le-projet-dans-sourcetree">Ouvrir le projet dans SourceTree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coupler-sourcetree-au-depot-github">Coupler SourceTree au dépôt GitHUB</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Outils%20logiciels.html">Outils logiciels</a></li>
@@ -185,15 +189,32 @@ git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </
 </section>
 <section id="utilisation-de-sourcetree-pour-gerer-le-depot">
 <h2>Utilisation de  SourceTree pour Gérer le dépôt<a class="headerlink" href="#utilisation-de-sourcetree-pour-gerer-le-depot" title="Lien vers cette rubrique"></a></h2>
+<section id="ouvrir-le-projet-dans-sourcetree">
+<h3>Ouvrir le projet dans SourceTree<a class="headerlink" href="#ouvrir-le-projet-dans-sourcetree" title="Lien vers cette rubrique"></a></h3>
 <ol class="arabic simple">
 <li><p>Ouvrez SourceTree.</p></li>
-<li><p>Cliquez sur New dans la barre d’outils.</p></li>
-<li><p>Sélectionnez Clone Repository.</p></li>
-<li><p>Dans le champ Source URL, entrez l’URL de votre dépôt GitHub (par exemple, <a class="reference external" href="https://github.com/USERNAME/sphinx-docs.git">https://github.com/USERNAME/sphinx-docs.git</a>).</p></li>
-<li><p>Dans le champ Destination Path, sélectionnez le dossier où vous souhaitez cloner votre projet.</p></li>
 </ol>
+<p>2. Cliquez sur <strong>Add</strong> dans la barre d’outils.
+4. Sélectionner le dossier du projet.</p>
+</section>
+<section id="coupler-sourcetree-au-depot-github">
+<h3>Coupler SourceTree au dépôt GitHUB<a class="headerlink" href="#coupler-sourcetree-au-depot-github" title="Lien vers cette rubrique"></a></h3>
+<p>Il faut rensigner le Token dans SourceTree :</p>
+<ol class="arabic">
+<li><p>Menu Outils &gt; Options &gt; Authentification &gt; Ajouter</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Service d’hébergement : GitHub</p></li>
+<li><p>Protocole préféré : HTTPS</p></li>
+<li><p>Authentification : Basic</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Entrer son identifiant GitHub</p>
 <p>Cliquez sur Clone.
 Vous pouvez maintenant utiliser SourceTree pour gérer vos commits, vos branches, et vos push/pull vers GitHub.</p>
+</section>
 </section>
 </section>
 
