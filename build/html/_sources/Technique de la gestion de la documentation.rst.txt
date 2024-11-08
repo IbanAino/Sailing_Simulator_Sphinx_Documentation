@@ -18,7 +18,7 @@ Se rendre dans le dossier de la documentation
 
 .. code-block:: bash
 
-    cd E:
+    E:
     cd E:\Iban\Documents\Sailing_Simulator\Documentation_Sphinx
 
 Installer l'environnement virtuel dans le dossier

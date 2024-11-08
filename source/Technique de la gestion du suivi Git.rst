@@ -1,8 +1,8 @@
 Technique de la gestion du suivi Git
 ====================================
 
-Création du dépôt
------------------
+Création du dépôt sur GitHub
+----------------------------
 
 1. Connectez-vous à votre compte GitHub.
 2. Cliquez sur le bouton New pour créer un nouveau dépôt.
@@ -14,6 +14,16 @@ Création du dépôt
 
 4. Vous pouvez laisser les autres options par défaut.
 5. Cliquez sur Create repository pour créer le dépôt.
+
+
+Création du jeton pour avoir accès au dépôt GitHub
+--------------------------------------------------
+
+1. Sur votre compte GitHub, clic gauche sur la photo de de profil, puis Settings > Developer settings > Personal access tokens.
+2. Cliquez sur Generate new token.
+3. Donnez un nom au jeton, sélectionnez les autorisations nécessaires (généralement repo pour accéder aux dépôts privés ou publics), puis cliquez sur Generate token.
+4. Copiez le jeton immédiatement, car vous ne pourrez pas le voir à nouveau.
+
 
 Initialisation du Dépôt Git Local
 ---------------------------------
@@ -38,3 +48,55 @@ Il faut s'assure que Git est bien installé sur l'ordinateur. Git est disponible
 .. code-block:: bash
 
     git commit -m "Initial commit of Sphinx documentation"
+
+Assurez-vous que la branche s'appelle bien **main** et non **master**, avec la commande :
+
+.. code-block:: bash
+
+    git branch
+
+Pour changer le nom de la bnache, utiliser la commande :
+
+.. code-block:: bash
+
+    git branch -M main
+
+
+Connection du Dépôt Local au Dépôt GitHub
+-----------------------------------------
+
+1. Ajoutez le dépôt distant GitHub à votre dépôt local :
+
+.. code-block:: bash
+
+    git remote add origin https://github.com/USERNAME/sphinx-docs.git
+
+2. Remplacez **USERNAME** par votre nom d'utilisateur GitHub et **sphinx-docs** par le nom de votre dépôt.
+
+Avant le premier push, il faut s'assurer que le dépôt local contient les informations du dépôt distant, ce qui n'est pas forcément le cas si un fichier 'Readme' a été généré lors de la création du dépôt distant. Il faut donc rappatrier les données :
+
+.. code-block:: bash
+    
+    git pull origin main --rebase
+
+
+3. Poussez vos modifications sur GitHub :
+
+.. code-block:: bash
+
+    git push -u origin main
+
+4. Si votre branche par défaut est master au lieu de main, remplacez main par master.
+
+
+Utilisation de  SourceTree pour Gérer le dépôt
+----------------------------------------------
+
+1. Ouvrez SourceTree.
+2. Cliquez sur New dans la barre d'outils.
+3. Sélectionnez Clone Repository.
+4. Dans le champ Source URL, entrez l'URL de votre dépôt GitHub (par exemple, https://github.com/USERNAME/sphinx-docs.git).
+5. Dans le champ Destination Path, sélectionnez le dossier où vous souhaitez cloner votre projet.
+
+Cliquez sur Clone.
+Vous pouvez maintenant utiliser SourceTree pour gérer vos commits, vos branches, et vos push/pull vers GitHub.

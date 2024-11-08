@@ -61,8 +61,11 @@
 <li class="toctree-l1"><a class="reference internal" href="Mon%C3%A9tisation.html">Monétisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Technique%20de%20la%20gestion%20de%20la%20documentation.html">Technique de la gestion de la documentation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Technique de la gestion du suivi Git</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creation-du-depot">Création du dépôt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-du-depot-sur-github">Création du dépôt sur GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-du-jeton-pour-avoir-acces-au-depot-github">Création du jeton pour avoir accès au dépôt GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initialisation-du-depot-git-local">Initialisation du Dépôt Git Local</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connection-du-depot-local-au-depot-github">Connection du Dépôt Local au Dépôt GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-de-sourcetree-pour-gerer-le-depot">Utilisation de  SourceTree pour Gérer le dépôt</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Outils%20logiciels.html">Outils logiciels</a></li>
@@ -95,8 +98,8 @@
              
   <section id="technique-de-la-gestion-du-suivi-git">
 <h1>Technique de la gestion du suivi Git<a class="headerlink" href="#technique-de-la-gestion-du-suivi-git" title="Lien vers cette rubrique"></a></h1>
-<section id="creation-du-depot">
-<h2>Création du dépôt<a class="headerlink" href="#creation-du-depot" title="Lien vers cette rubrique"></a></h2>
+<section id="creation-du-depot-sur-github">
+<h2>Création du dépôt sur GitHub<a class="headerlink" href="#creation-du-depot-sur-github" title="Lien vers cette rubrique"></a></h2>
 <ol class="arabic">
 <li><p>Connectez-vous à votre compte GitHub.</p></li>
 <li><p>Cliquez sur le bouton New pour créer un nouveau dépôt.</p></li>
@@ -113,8 +116,18 @@
 <li><p>Cliquez sur Create repository pour créer le dépôt.</p></li>
 </ol>
 </section>
+<section id="creation-du-jeton-pour-avoir-acces-au-depot-github">
+<h2>Création du jeton pour avoir accès au dépôt GitHub<a class="headerlink" href="#creation-du-jeton-pour-avoir-acces-au-depot-github" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic simple">
+<li><p>Sur votre compte GitHub, clic gauche sur la photo de de profil, puis Settings &gt; Developer settings &gt; Personal access tokens.</p></li>
+<li><p>Cliquez sur Generate new token.</p></li>
+<li><p>Donnez un nom au jeton, sélectionnez les autorisations nécessaires (généralement repo pour accéder aux dépôts privés ou publics), puis cliquez sur Generate token.</p></li>
+<li><p>Copiez le jeton immédiatement, car vous ne pourrez pas le voir à nouveau.</p></li>
+</ol>
+</section>
 <section id="initialisation-du-depot-git-local">
 <h2>Initialisation du Dépôt Git Local<a class="headerlink" href="#initialisation-du-depot-git-local" title="Lien vers cette rubrique"></a></h2>
+<p>Il faut s’assure que Git est bien installé sur l’ordinateur. Git est disponible via le lien suivant : <a class="reference external" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
 <ol class="arabic simple">
 <li><p>Ouvrez votre terminal ou l’invite de commande dans le répertoire racine de votre projet Sphinx.</p></li>
 <li><p>Initialisez un dépôt Git :</p></li>
@@ -134,6 +147,51 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit of Sphinx documentation&quot;</span>
 </pre></div>
 </div>
+<p>Assurez-vous que la branche s’appelle bien <strong>main</strong> et non <strong>master</strong>, avec la commande :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch
+</pre></div>
+</div>
+<p>Pour changer le nom de la bnache, utiliser la commande :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+</pre></div>
+</div>
+</section>
+<section id="connection-du-depot-local-au-depot-github">
+<h2>Connection du Dépôt Local au Dépôt GitHub<a class="headerlink" href="#connection-du-depot-local-au-depot-github" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic simple">
+<li><p>Ajoutez le dépôt distant GitHub à votre dépôt local :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/USERNAME/sphinx-docs.git
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Remplacez <strong>USERNAME</strong> par votre nom d’utilisateur GitHub et <strong>sphinx-docs</strong> par le nom de votre dépôt.</p></li>
+</ol>
+<p>Avant le premier push, il faut s’assurer que le dépôt local contient les informations du dépôt distant, ce qui n’est pas forcément le cas si un fichier “Readme” a été généré lors de la création du dépôt distant. Il faut donc rappatrier les données :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main<span class="w"> </span>--rebase
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Poussez vos modifications sur GitHub :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Si votre branche par défaut est master au lieu de main, remplacez main par master.</p></li>
+</ol>
+</section>
+<section id="utilisation-de-sourcetree-pour-gerer-le-depot">
+<h2>Utilisation de  SourceTree pour Gérer le dépôt<a class="headerlink" href="#utilisation-de-sourcetree-pour-gerer-le-depot" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic simple">
+<li><p>Ouvrez SourceTree.</p></li>
+<li><p>Cliquez sur New dans la barre d’outils.</p></li>
+<li><p>Sélectionnez Clone Repository.</p></li>
+<li><p>Dans le champ Source URL, entrez l’URL de votre dépôt GitHub (par exemple, <a class="reference external" href="https://github.com/USERNAME/sphinx-docs.git">https://github.com/USERNAME/sphinx-docs.git</a>).</p></li>
+<li><p>Dans le champ Destination Path, sélectionnez le dossier où vous souhaitez cloner votre projet.</p></li>
+</ol>
+<p>Cliquez sur Clone.
+Vous pouvez maintenant utiliser SourceTree pour gérer vos commits, vos branches, et vos push/pull vers GitHub.</p>
 </section>
 </section>
 
