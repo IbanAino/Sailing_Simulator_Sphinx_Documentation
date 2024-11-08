@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technique de la gestion du suivi Git &mdash; Documentation Sailing_Simulator 0.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=af8511e3"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Outils logiciels" href="Outils%20logiciels.html" />
+    <link rel="prev" title="Technique de la gestion de la documentation" href="Technique%20de%20la%20gestion%20de%20la%20documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Sailing_Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Pitch%20du%20jeu.html">Pitch du jeu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Etat%20de%20l%27art.html">Etat de l’art</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Architecture%20du%20code.html">Architecture du code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Brique%20multijoueur.html">Brique multijoueur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Brique%20simulation%20de%20fluide.html">Brique simulation de fluide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Brique%20comportement%20des%20voiles.html">Brique comportement des voiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Brique%20physique%20des%20forces.html">Brique physique des forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Brique%20collisions.html">Brique collisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Personnalisation%20du%20bateau.html">Personnalisation du bateau</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UI%20des%20menus.html">UI des menus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UI%20de%20la%20navigation.html">UI de la navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Diff%C3%A9rences%20entre%20les%20plateformes.html">Différences entre les plateformes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Communication%20sur%20le%20jeu.html">Communication sur le jeu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mon%C3%A9tisation.html">Monétisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Technique%20de%20la%20gestion%20de%20la%20documentation.html">Technique de la gestion de la documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technique de la gestion du suivi Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation-du-depot-sur-github">Création du dépôt sur GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-du-jeton-pour-avoir-acces-au-depot-github">Création du jeton pour avoir accès au dépôt GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initialisation-du-depot-git-local">Initialisation du Dépôt Git Local</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connection-du-depot-local-au-depot-github">Connection du Dépôt Local au Dépôt GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-de-sourcetree-pour-gerer-le-depot">Utilisation de  SourceTree pour Gérer le dépôt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ouvrir-le-projet-dans-sourcetree">Ouvrir le projet dans SourceTree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coupler-sourcetree-au-depot-github">Coupler SourceTree au dépôt GitHUB</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Outils%20logiciels.html">Outils logiciels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Identifiants%20et%20mots%20de%20passe.html">Identifiants et mots de passe</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sailing_Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Technique de la gestion du suivi Git</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Technique de la gestion du suivi Git.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="technique-de-la-gestion-du-suivi-git">
+<h1>Technique de la gestion du suivi Git<a class="headerlink" href="#technique-de-la-gestion-du-suivi-git" title="Lien vers cette rubrique"></a></h1>
+<section id="creation-du-depot-sur-github">
+<h2>Création du dépôt sur GitHub<a class="headerlink" href="#creation-du-depot-sur-github" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic">
+<li><p>Connectez-vous à votre compte GitHub.</p></li>
+<li><p>Cliquez sur le bouton New pour créer un nouveau dépôt.</p></li>
+<li><p>Remplissez les champs :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Repository name : Entrez un nom pour votre projet (ex. sphinx-docs).</p></li>
+<li><p>Description : Ajoutez une description si vous le souhaitez.</p></li>
+<li><p>Cochez l’option Add a README file si vous voulez créer un fichier README.md.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Vous pouvez laisser les autres options par défaut.</p></li>
+<li><p>Cliquez sur Create repository pour créer le dépôt.</p></li>
+</ol>
+</section>
+<section id="creation-du-jeton-pour-avoir-acces-au-depot-github">
+<h2>Création du jeton pour avoir accès au dépôt GitHub<a class="headerlink" href="#creation-du-jeton-pour-avoir-acces-au-depot-github" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic simple">
+<li><p>Sur votre compte GitHub, clic gauche sur la photo de de profil, puis Settings &gt; Developer settings &gt; Personal access tokens.</p></li>
+<li><p>Cliquez sur Generate new token.</p></li>
+<li><p>Donnez un nom au jeton, sélectionnez les autorisations nécessaires (généralement repo pour accéder aux dépôts privés ou publics), puis cliquez sur Generate token.</p></li>
+<li><p>Copiez le jeton immédiatement, car vous ne pourrez pas le voir à nouveau.</p></li>
+</ol>
+</section>
+<section id="initialisation-du-depot-git-local">
+<h2>Initialisation du Dépôt Git Local<a class="headerlink" href="#initialisation-du-depot-git-local" title="Lien vers cette rubrique"></a></h2>
+<p>Il faut s’assure que Git est bien installé sur l’ordinateur. Git est disponible via le lien suivant : <a class="reference external" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<ol class="arabic simple">
+<li><p>Ouvrez votre terminal ou l’invite de commande dans le répertoire racine de votre projet Sphinx.</p></li>
+<li><p>Initialisez un dépôt Git :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Ajoutez tous les fichiers Sphinx nouvellement créés à votre dépôt :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Faites un premier commit :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit of Sphinx documentation&quot;</span>
+</pre></div>
+</div>
+<p>Assurez-vous que la branche s’appelle bien <strong>main</strong> et non <strong>master</strong>, avec la commande :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch
+</pre></div>
+</div>
+<p>Pour changer le nom de la bnache, utiliser la commande :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+</pre></div>
+</div>
+</section>
+<section id="connection-du-depot-local-au-depot-github">
+<h2>Connection du Dépôt Local au Dépôt GitHub<a class="headerlink" href="#connection-du-depot-local-au-depot-github" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic simple">
+<li><p>Ajoutez le dépôt distant GitHub à votre dépôt local :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/USERNAME/sphinx-docs.git
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Remplacez <strong>USERNAME</strong> par votre nom d’utilisateur GitHub et <strong>sphinx-docs</strong> par le nom de votre dépôt.</p></li>
+</ol>
+<p>Avant le premier push, il faut s’assurer que le dépôt local contient les informations du dépôt distant, ce qui n’est pas forcément le cas si un fichier “Readme” a été généré lors de la création du dépôt distant. Il faut donc rappatrier les données, en validant les changements locaux en amont :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Save local changes before rebase&quot;</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main<span class="w"> </span>--rebase
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Poussez vos modifications sur GitHub :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Si votre branche par défaut est master au lieu de main, remplacez main par master.</p></li>
+</ol>
+</section>
+<section id="utilisation-de-sourcetree-pour-gerer-le-depot">
+<h2>Utilisation de  SourceTree pour Gérer le dépôt<a class="headerlink" href="#utilisation-de-sourcetree-pour-gerer-le-depot" title="Lien vers cette rubrique"></a></h2>
+<section id="ouvrir-le-projet-dans-sourcetree">
+<h3>Ouvrir le projet dans SourceTree<a class="headerlink" href="#ouvrir-le-projet-dans-sourcetree" title="Lien vers cette rubrique"></a></h3>
+<ol class="arabic simple">
+<li><p>Ouvrez SourceTree.</p></li>
+</ol>
+<p>2. Cliquez sur <strong>Add</strong> dans la barre d’outils.
+4. Sélectionner le dossier du projet.</p>
+</section>
+<section id="coupler-sourcetree-au-depot-github">
+<h3>Coupler SourceTree au dépôt GitHUB<a class="headerlink" href="#coupler-sourcetree-au-depot-github" title="Lien vers cette rubrique"></a></h3>
+<p>Il faut rensigner le Token dans SourceTree :</p>
+<ol class="arabic">
+<li><p>Menu Outils &gt; Options &gt; Authentification &gt; Ajouter</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Service d’hébergement : GitHub</p></li>
+<li><p>Protocole préféré : HTTPS</p></li>
+<li><p>Authentification : Basic</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Entrer son identifiant GitHub</p>
+<p>Cliquez sur Clone.
+Vous pouvez maintenant utiliser SourceTree pour gérer vos commits, vos branches, et vos push/pull vers GitHub.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Technique%20de%20la%20gestion%20de%20la%20documentation.html" class="btn btn-neutral float-left" title="Technique de la gestion de la documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Outils%20logiciels.html" class="btn btn-neutral float-right" title="Outils logiciels" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, Iban.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
