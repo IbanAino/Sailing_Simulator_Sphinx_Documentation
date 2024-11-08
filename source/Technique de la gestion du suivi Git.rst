@@ -73,10 +73,12 @@ Connection du Dépôt Local au Dépôt GitHub
 
 2. Remplacez **USERNAME** par votre nom d'utilisateur GitHub et **sphinx-docs** par le nom de votre dépôt.
 
-Avant le premier push, il faut s'assurer que le dépôt local contient les informations du dépôt distant, ce qui n'est pas forcément le cas si un fichier 'Readme' a été généré lors de la création du dépôt distant. Il faut donc rappatrier les données :
+Avant le premier push, il faut s'assurer que le dépôt local contient les informations du dépôt distant, ce qui n'est pas forcément le cas si un fichier 'Readme' a été généré lors de la création du dépôt distant. Il faut donc rappatrier les données, en validant les changements locaux en amont :
 
 .. code-block:: bash
-    
+
+    git add .
+    git commit -m "Save local changes before rebase"
     git pull origin main --rebase
 
 
@@ -92,11 +94,27 @@ Avant le premier push, il faut s'assurer que le dépôt local contient les infor
 Utilisation de  SourceTree pour Gérer le dépôt
 ----------------------------------------------
 
+Ouvrir le projet dans SourceTree
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 1. Ouvrez SourceTree.
-2. Cliquez sur New dans la barre d'outils.
-3. Sélectionnez Clone Repository.
-4. Dans le champ Source URL, entrez l'URL de votre dépôt GitHub (par exemple, https://github.com/USERNAME/sphinx-docs.git).
-5. Dans le champ Destination Path, sélectionnez le dossier où vous souhaitez cloner votre projet.
+2. Cliquez sur **Add** dans la barre d'outils.
+4. Sélectionner le dossier du projet.
+
+
+Coupler SourceTree au dépôt GitHUB
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Il faut rensigner le Token dans SourceTree :
+
+1. Menu Outils > Options > Authentification > Ajouter
+
+    - Service d'hébergement : GitHub
+    - Protocole préféré : HTTPS
+    - Authentification : Basic
+
+Entrer son identifiant GitHub
+
 
 Cliquez sur Clone.
 Vous pouvez maintenant utiliser SourceTree pour gérer vos commits, vos branches, et vos push/pull vers GitHub.

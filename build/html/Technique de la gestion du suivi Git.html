@@ -167,8 +167,10 @@
 <ol class="arabic simple" start="2">
 <li><p>Remplacez <strong>USERNAME</strong> par votre nom d’utilisateur GitHub et <strong>sphinx-docs</strong> par le nom de votre dépôt.</p></li>
 </ol>
-<p>Avant le premier push, il faut s’assurer que le dépôt local contient les informations du dépôt distant, ce qui n’est pas forcément le cas si un fichier “Readme” a été généré lors de la création du dépôt distant. Il faut donc rappatrier les données :</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main<span class="w"> </span>--rebase
+<p>Avant le premier push, il faut s’assurer que le dépôt local contient les informations du dépôt distant, ce qui n’est pas forcément le cas si un fichier “Readme” a été généré lors de la création du dépôt distant. Il faut donc rappatrier les données, en validant les changements locaux en amont :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Save local changes before rebase&quot;</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main<span class="w"> </span>--rebase
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">

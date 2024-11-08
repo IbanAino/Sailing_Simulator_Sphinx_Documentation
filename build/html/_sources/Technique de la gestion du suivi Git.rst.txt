@@ -73,10 +73,12 @@ Connection du Dépôt Local au Dépôt GitHub
 
 2. Remplacez **USERNAME** par votre nom d'utilisateur GitHub et **sphinx-docs** par le nom de votre dépôt.
 
-Avant le premier push, il faut s'assurer que le dépôt local contient les informations du dépôt distant, ce qui n'est pas forcément le cas si un fichier 'Readme' a été généré lors de la création du dépôt distant. Il faut donc rappatrier les données :
+Avant le premier push, il faut s'assurer que le dépôt local contient les informations du dépôt distant, ce qui n'est pas forcément le cas si un fichier 'Readme' a été généré lors de la création du dépôt distant. Il faut donc rappatrier les données, en validant les changements locaux en amont :
 
 .. code-block:: bash
-    
+
+    git add .
+    git commit -m "Save local changes before rebase"
     git pull origin main --rebase
 
 
