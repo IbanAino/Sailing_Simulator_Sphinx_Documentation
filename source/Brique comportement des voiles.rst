@@ -1,2 +1,0 @@
-Brique comportement des voiles
-==============================

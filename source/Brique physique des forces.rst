@@ -1,2 +1,0 @@
-Brique physique des forces
-==========================

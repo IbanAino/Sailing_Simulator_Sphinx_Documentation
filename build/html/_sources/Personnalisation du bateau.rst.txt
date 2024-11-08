@@ -1,2 +1,0 @@
-Personnalisation du bateau
-==========================

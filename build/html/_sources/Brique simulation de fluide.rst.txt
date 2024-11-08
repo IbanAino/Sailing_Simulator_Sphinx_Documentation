@@ -1,2 +1,0 @@
-Brique simulation de fluide
-===========================

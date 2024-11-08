@@ -1,2 +1,0 @@
-Différences entre les plateformes
-=================================
