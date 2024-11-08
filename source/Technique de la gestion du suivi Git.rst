@@ -99,7 +99,7 @@ Ouvrir le projet dans SourceTree
 
 1. Ouvrez SourceTree.
 2. Cliquez sur **Add** dans la barre d'outils.
-4. Sélectionner le dossier du projet.
+3. Sélectionner le dossier du projet.
 
 
 Coupler SourceTree au dépôt GitHUB

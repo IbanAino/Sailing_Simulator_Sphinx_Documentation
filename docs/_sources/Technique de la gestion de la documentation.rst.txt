@@ -77,11 +77,14 @@ Si .venv n'est pas activée, l'activer
 
     .venv\Scripts\activate
 
-Puis exécuter la commande suivante pour chaque régénération de la dicumentation :
+Puis exécuter la commande suivante pour chaque régénération de la documentation :
 
 .. code-block:: bash
 
-    make.bat html
+    sphinx-build -b html source docs
+
+.. note::
+    Traditionnellement, la dicumentation est générée dans le dossier **build** avec la commande **make.bat html**, mais étant donné que GitHUB ne lit que le répertoire **docs** pour afficher la documentation en ligne nous devons utiliser la commande de build **sphinx-build -b html source docs**.
 
 Création d'une nouvelle page
 ----------------------------

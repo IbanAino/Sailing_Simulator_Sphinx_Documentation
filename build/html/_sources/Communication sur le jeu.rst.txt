@@ -1,2 +1,0 @@
-Communication sur le jeu
-========================

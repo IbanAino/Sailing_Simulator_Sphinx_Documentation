@@ -158,9 +158,13 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 </pre></div>
 </div>
-<p>Puis exécuter la commande suivante pour chaque régénération de la dicumentation :</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make.bat<span class="w"> </span>html
+<p>Puis exécuter la commande suivante pour chaque régénération de la documentation :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span><span class="nb">source</span><span class="w"> </span>docs
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Traditionnellement, la dicumentation est générée dans le dossier <strong>build</strong> avec la commande <strong>make.bat html</strong>, mais étant donné que GitHUB ne lit que le répertoire <strong>docs</strong> pour afficher la documentation en ligne nous devons utiliser la commande de build <strong>sphinx-build -b html source docs</strong>.</p>
 </div>
 </section>
 <section id="creation-d-une-nouvelle-page">
