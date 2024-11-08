@@ -1,0 +1,40 @@
+Technique de la gestion du suivi Git
+====================================
+
+Création du dépôt
+-----------------
+
+1. Connectez-vous à votre compte GitHub.
+2. Cliquez sur le bouton New pour créer un nouveau dépôt.
+3. Remplissez les champs :
+
+    - Repository name : Entrez un nom pour votre projet (ex. sphinx-docs).
+    - Description : Ajoutez une description si vous le souhaitez.
+    - Cochez l'option Add a README file si vous voulez créer un fichier README.md.
+
+4. Vous pouvez laisser les autres options par défaut.
+5. Cliquez sur Create repository pour créer le dépôt.
+
+Initialisation du Dépôt Git Local
+---------------------------------
+
+Il faut s'assure que Git est bien installé sur l'ordinateur. Git est disponible via le lien suivant : https://git-scm.com/downloads
+
+1. Ouvrez votre terminal ou l'invite de commande dans le répertoire racine de votre projet Sphinx.
+2. Initialisez un dépôt Git :
+
+.. code-block:: bash
+
+    git init
+
+3. Ajoutez tous les fichiers Sphinx nouvellement créés à votre dépôt :
+
+.. code-block:: bash
+
+    git add .
+
+4. Faites un premier commit :
+
+.. code-block:: bash
+
+    git commit -m "Initial commit of Sphinx documentation"
