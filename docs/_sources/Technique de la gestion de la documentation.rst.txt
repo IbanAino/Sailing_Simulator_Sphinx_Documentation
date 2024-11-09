@@ -84,7 +84,7 @@ Puis exécuter la commande suivante pour chaque régénération de la documentat
     sphinx-build -b html source docs
 
 .. note::
-    Traditionnellement, la dicumentation est générée dans le dossier **build** avec la commande **make.bat html**, mais étant donné que GitHUB ne lit que le répertoire **docs** pour afficher la documentation en ligne nous devons utiliser la commande de build **sphinx-build -b html source docs**.
+    Traditionnellement, la documentation est générée dans le dossier **build** avec la commande **make.bat html**. Mais étant donné que GitHUB ne lit que le répertoire **docs** pour afficher la documentation en ligne, nous devons utiliser la commande de build **sphinx-build -b html source docs**.
 
 Création d'une nouvelle page
 ----------------------------
@@ -92,6 +92,14 @@ Création d'une nouvelle page
 Créer un fichier texte dans le répertoire **source** avec un titre et l'extension **.rst**.
 Ouvrir ce fichier et écrire son titre, sous-ligné de signes **==** de même longueur que le titre.
 Dans le fichier **index.rst** reporter le titre de la nouvelle page dans la table des matières.
+
+
+Syntaxe du langage Markdown
+---------------------------
+
+https://www.ionos.fr/digitalguide/sites-internet/developpement-web/markdown/
+https://sublime-and-sphinx-guide.readthedocs.io/en/latest/references.html
+
 
 Sous-titre de niveau 2
 ~~~~~~~~~~~~~~~~~~~~~~~

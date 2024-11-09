@@ -93,6 +93,14 @@ Créer un fichier texte dans le répertoire **source** avec un titre et l'extens
 Ouvrir ce fichier et écrire son titre, sous-ligné de signes **==** de même longueur que le titre.
 Dans le fichier **index.rst** reporter le titre de la nouvelle page dans la table des matières.
 
+
+Syntaxe du langage Markdown
+---------------------------
+
+https://www.ionos.fr/digitalguide/sites-internet/developpement-web/markdown/
+https://sublime-and-sphinx-guide.readthedocs.io/en/latest/references.html
+
+
 Sous-titre de niveau 2
 ~~~~~~~~~~~~~~~~~~~~~~~
 
