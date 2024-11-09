@@ -18,6 +18,7 @@ Sailing_Simulator documentation
    Pitch du jeu
    Etat de l'art
    Architecture du code
+   Les cartes
    Brique multijoueur
    Brique simulation de fluide
    Brique comportement des voiles

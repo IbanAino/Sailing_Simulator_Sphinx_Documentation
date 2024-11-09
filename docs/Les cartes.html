@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Architecture du code &mdash; Documentation Sailing_Simulator 0.1</title>
+  <title>Les cartes &mdash; Documentation Sailing_Simulator 0.1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Les cartes" href="Les%20cartes.html" />
-    <link rel="prev" title="Etat de l’art" href="Etat%20de%20l%27art.html" /> 
+    <link rel="next" title="Brique multijoueur" href="Brique%20multijoueur.html" />
+    <link rel="prev" title="Architecture du code" href="Architecture%20du%20code.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,8 +47,25 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Pitch%20du%20jeu.html">Pitch du jeu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Etat%20de%20l%27art.html">Etat de l’art</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture du code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Les%20cartes.html">Les cartes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Architecture%20du%20code.html">Architecture du code</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les cartes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-nautique">Base nautique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lac-d-oo">Lac d’Oô</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dumont-d-urville">Dumont d’Urville</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chocolat">Chocolat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ile-aux-morts">Île aux morts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#station-offshore">Station Offshore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#styx">Styx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#volcan">Volcan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desert">Désert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#espace">Espace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#atlantide">Atlantide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#palais">Palais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#golfe-du-morbihan">Golfe du Morbihan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#baie-de-soccoa">Baie de Soccoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tours-spatiales">Tours spatiales</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Brique%20multijoueur.html">Brique multijoueur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Brique%20simulation%20de%20fluide.html">Brique simulation de fluide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Brique%20comportement%20des%20voiles.html">Brique comportement des voiles</a></li>
@@ -80,9 +97,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Architecture du code</li>
+      <li class="breadcrumb-item active">Les cartes</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/Architecture du code.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+            <a href="_sources/Les cartes.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -90,23 +107,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="architecture-du-code">
-<h1>Architecture du code<a class="headerlink" href="#architecture-du-code" title="Lien vers cette rubrique"></a></h1>
-<div style="border: 1px solid #ccc; padding: 10px;">
-    <h2>Mon Schéma HTML</h2>
-    <p>Ceci est un exemple de schéma HTML inclus dans la documentation Sphinx.</p>
-</div>
-
-<div><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;Electron\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36\&quot; version=\&quot;24.7.17\&quot;&gt;\n  &lt;diagram name=\&quot;Page-1\&quot; id=\&quot;LlOVD28wN5XYmJqHqIhk\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;938\&quot; dy=\&quot;648\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;1169\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;cwfKP34AY5VQ3bqTVTVk-1\&quot; value=\&quot;Lapinou\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;170\&quot; y=\&quot;180\&quot; width=\&quot;120\&quot; height=\&quot;60\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;cwfKP34AY5VQ3bqTVTVk-2\&quot; value=\&quot;mikaèlle jidh\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;183\&quot; y=\&quot;321\&quot; width=\&quot;120\&quot; height=\&quot;60\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;cwfKP34AY5VQ3bqTVTVk-3\&quot; value=\&quot;\&quot; style=\&quot;endArrow=classic;html=1;rounded=0;exitX=0.476;exitY=0.953;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.514;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;cwfKP34AY5VQ3bqTVTVk-1\&quot; target=\&quot;cwfKP34AY5VQ3bqTVTVk-2\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;248\&quot; y=\&quot;301\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;298\&quot; y=\&quot;251\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
-<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
-</div></section>
+  <section id="les-cartes">
+<h1>Les cartes<a class="headerlink" href="#les-cartes" title="Lien vers cette rubrique"></a></h1>
+<section id="base-nautique">
+<h2>Base nautique<a class="headerlink" href="#base-nautique" title="Lien vers cette rubrique"></a></h2>
+<p>Carte de base pour s’entraîner, sans difficulté.</p>
+</section>
+<section id="lac-d-oo">
+<h2>Lac d’Oô<a class="headerlink" href="#lac-d-oo" title="Lien vers cette rubrique"></a></h2>
+</section>
+<section id="dumont-d-urville">
+<h2>Dumont d’Urville<a class="headerlink" href="#dumont-d-urville" title="Lien vers cette rubrique"></a></h2>
+<p>Base en Antactique</p>
+</section>
+<section id="chocolat">
+<h2>Chocolat<a class="headerlink" href="#chocolat" title="Lien vers cette rubrique"></a></h2>
+<p>Navigation sur du chocolat liquide</p>
+</section>
+<section id="ile-aux-morts">
+<h2>Île aux morts<a class="headerlink" href="#ile-aux-morts" title="Lien vers cette rubrique"></a></h2>
+</section>
+<section id="station-offshore">
+<h2>Station Offshore<a class="headerlink" href="#station-offshore" title="Lien vers cette rubrique"></a></h2>
+</section>
+<section id="styx">
+<h2>Styx<a class="headerlink" href="#styx" title="Lien vers cette rubrique"></a></h2>
+<p>Ambiance sombre, avec des bâteaus de morts qui travensent transversalement le circuit et qu’il ne faut pas toucher.</p>
+</section>
+<section id="volcan">
+<h2>Volcan<a class="headerlink" href="#volcan" title="Lien vers cette rubrique"></a></h2>
+<p>Navigation sur la lave en fusion à l’intérieur d’un cratère, avec un timer car le volcan finit par exploser.</p>
+</section>
+<section id="desert">
+<h2>Désert<a class="headerlink" href="#desert" title="Lien vers cette rubrique"></a></h2>
+<p>Navigation sur le sable d’un désert.</p>
+</section>
+<section id="espace">
+<h2>Espace<a class="headerlink" href="#espace" title="Lien vers cette rubrique"></a></h2>
+<p>Navigation dans les étoiles.</p>
+</section>
+<section id="atlantide">
+<h2>Atlantide<a class="headerlink" href="#atlantide" title="Lien vers cette rubrique"></a></h2>
+</section>
+<section id="palais">
+<h2>Palais<a class="headerlink" href="#palais" title="Lien vers cette rubrique"></a></h2>
+<p>Navigation dans les ruines d’un palais, avec donc beaucoup d’obstacles sur le parcours.</p>
+</section>
+<section id="golfe-du-morbihan">
+<h2>Golfe du Morbihan<a class="headerlink" href="#golfe-du-morbihan" title="Lien vers cette rubrique"></a></h2>
+</section>
+<section id="baie-de-soccoa">
+<h2>Baie de Soccoa<a class="headerlink" href="#baie-de-soccoa" title="Lien vers cette rubrique"></a></h2>
+</section>
+<section id="tours-spatiales">
+<h2>Tours spatiales<a class="headerlink" href="#tours-spatiales" title="Lien vers cette rubrique"></a></h2>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="Etat%20de%20l%27art.html" class="btn btn-neutral float-left" title="Etat de l’art" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="Les%20cartes.html" class="btn btn-neutral float-right" title="Les cartes" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Architecture%20du%20code.html" class="btn btn-neutral float-left" title="Architecture du code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Brique%20multijoueur.html" class="btn btn-neutral float-right" title="Brique multijoueur" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
